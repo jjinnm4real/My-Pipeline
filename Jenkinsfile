@@ -12,7 +12,7 @@ pipeline {
                 sh "pwd"
             }    
         }
-        stage ('Create HTML Folder') {
+        stage ('Create HTML Report') {
             steps {
                 publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: ''])
             }                
