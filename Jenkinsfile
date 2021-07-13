@@ -11,5 +11,10 @@ pipeline {
                 sh "mkdir html_report"
             }    
         }
+        stage ('Build HTML Report') {
+            steps {
+                publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '/html_report', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: ''])
+            }                
+        }    
     }
 }
