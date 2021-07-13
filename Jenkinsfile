@@ -9,6 +9,7 @@ pipeline {
         stage('Create new folder') {
             steps {
                 sh "mkdir html_report"
+                echo "pwd"
             }    
         }
         stage ('Build HTML Report') {
