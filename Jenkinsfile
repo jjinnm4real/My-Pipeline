@@ -12,12 +12,9 @@ pipeline {
                 sh "pwd"
             }    
         }
-        stage ('Build HTML Report') {
+        stage ('Create HTML Folder') {
             steps {
-                dir("/html_report")
-            }
-            steps {
-                publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '/html_report', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: ''])
+                publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: ''])
             }                
         }    
     }
