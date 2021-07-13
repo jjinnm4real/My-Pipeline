@@ -6,12 +6,6 @@ pipeline {
                 sh 'python --version'
             }
         }
-        stage('Create new folder') {
-            steps {
-                sh "mkdir html_report"
-                sh "pwd"
-            }    
-        }
         stage ('Create HTML Report') {
             steps {
                 sh "pwd"
