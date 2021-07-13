@@ -1,5 +1,5 @@
 pipeline {
-    agent { docker { image 'python:3.5.1' } }
+    agent any
     stages {
         stage('build') {
             steps {
@@ -9,13 +9,13 @@ pipeline {
         stage ('Generate HTML Report') {
             steps {
                 publishHTML (target : [allowMissing: false,
-                    alwaysLinkToLastBuild: true,
-                    keepAll: true,
-                    reportDir: '',
-                    reportFiles: 'myreport.html',
-                    reportName: 'My Reports',
-                    reportTitles: 'The Report'])
-                }    
+                alwaysLinkToLastBuild: true,
+                keepAll: true,
+                reportDir: '',
+                reportFiles: 'myreport.html',
+                reportName: 'My Reports',
+                reportTitles: 'The Report'])
+               
             }    
         }    
     }
