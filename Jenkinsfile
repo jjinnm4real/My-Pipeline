@@ -6,6 +6,10 @@ pipeline {
                 sh 'python --version'
             }
         }
-        
+        state('Create new folder') {
+            steps {
+                sh "mkdir html_report"
+            }    
+        }
     }
 }
